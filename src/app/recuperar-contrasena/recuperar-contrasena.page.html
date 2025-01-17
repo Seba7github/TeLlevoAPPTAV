@@ -1,0 +1,30 @@
+
+<ion-content [fullscreen]="true">
+  <!-- Contenedor principal para la tarjeta de recuperación -->
+  <div id="background-container">
+    <div id="container">
+      <!-- Card para contener el formulario -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Recupera tu contraseña</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <form>
+            <ion-list>
+              <ion-item>
+                <ion-label position="floating">Correo electrónico</ion-label>
+                <ion-input type="email" placeholder="Ingresa tu correo" required></ion-input>
+              </ion-item>
+            </ion-list>
+            <ion-button expand="full" type="submit">Recuperar Contraseña</ion-button>
+            <ion-button (click)="goBack()" expand="full" color="secondary">
+              Atrás
+            </ion-button>
+          </form>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+

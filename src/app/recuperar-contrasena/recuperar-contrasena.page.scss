@@ -1,0 +1,45 @@
+#background-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  #container {
+    width: 90%;
+    max-width: 400px; 
+  }
+  
+  ion-card {
+    margin-left: 0px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    margin-top: 50px;
+    padding: 20px; 
+  }
+  
+  ion-card-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+  }
+  
+  ion-input {
+    margin-top: 30px; 
+  }
+  
+  ion-button {
+    margin-top: 20px;
+    background-color: blue; 
+  }
+  ion-label {
+    margin-bottom:80px;
+  }
+  
