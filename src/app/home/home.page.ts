@@ -51,10 +51,7 @@ export class HomePage {
     const imagen = document.querySelector(
       '#container ion-card ion-card-header ion-img'
     ) as HTMLElement;
-    /* Una vez seleccionamos , generamos la animacion por medio del animation controller
-      Rectificar cada atributo en la documentacion 
-      https://ionicframework.com/docs/utilities/animations
-    */
+  
     const animacion = this.animation
       .create()
       .addElement(imagen)
@@ -65,21 +62,25 @@ export class HomePage {
           offset: 0,
           opacity: '1',
           border: '1px solid cyan', // Borde inicial más fino
+          boxShadow: '0 0 5px cyan', // Le damos un resplandor suave
           transform: 'scale(1)', // Imagen en su tamaño original
         },
         {
           offset: 0.5,
           opacity: '0.8',
-          border: '8px solid cyan', // Borde más grueso a la mitad de la animación
+          border: '5px solid cyan', // Borde más grueso a la mitad de la animación
+          boxShadow: '0 0 15px 5px cyan', // Aumento del resplandor para simular un brillo
           transform: 'scale(1)', // Imagen sin cambios en tamaño
         },
         {
           offset: 1,
           opacity: '1',
           border: '1px solid cyan', // Borde vuelve al grosor original
+          boxShadow: '0 0 5px cyan', // Resplandor más suave
           transform: 'scale(1)', // Imagen sin cambios en tamaño
         },
       ]);
+  
     animacion.play();
   }
 }

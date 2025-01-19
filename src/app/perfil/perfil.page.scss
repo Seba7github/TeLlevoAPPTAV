@@ -26,30 +26,32 @@
     background-size: cover;
     animation: changeBackground 30s infinite ease-in-out; 
   }
-  #container{
-    height: 100%;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center; 
-    height: 100%;
-    
-  }
 
-  
+  #container{
+    max-height: 400px;
+  }
+ 
+
   ion-card {
-    width: 380px; 
+    width: 350px; 
     max-width: 500px; 
-    height: 500px;
-    margin-left: 0px;
+    height: 300px;
+    margin-left: 10px;
     align-items: center;
     margin-top: 15%;
     margin-bottom:10%;
-   
   }
+
+
+  
+  ion-label{
+    margin-bottom: 50%;
+  }
+
   ion-button{
-    margin-top :50px;
-  }
+    margin-top: 150px;
+    
+  } 
 
 @keyframes changeBackground {
   0%, 100% {
