@@ -19,7 +19,11 @@ const routes: Routes = [
   {
     path: 'recuperar-contrasena',
     loadChildren: () => import('./recuperar-contrasena/recuperar-contrasena.module').then( m => m.RecuperarContrasenaPageModule)
+  },  {
+    path: 'error',
+    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
   },
+
 ];
 
 @NgModule({
