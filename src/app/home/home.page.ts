@@ -43,6 +43,7 @@ export class HomePage {
     }
   }
 
+  
   ngAfterContentInit() {
     this.animacionLogin();
   }
