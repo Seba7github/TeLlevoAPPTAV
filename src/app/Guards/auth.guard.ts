@@ -13,9 +13,9 @@ export const authGuard: CanActivateFn = (route, state) => {
     router.navigate(['/home']);
 
     const toast = toastController.create({
-      message: 'Debe autentificarse para acceder',
+      message: 'Debe autentificarse para acceder❌',
       duration: 3000,
-      position: 'middle',
+      position: 'top',
     });
     toast.then((res) => {
       res.present();

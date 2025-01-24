@@ -1,13 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Error</ion-title>
+    <ion-title>❌ ERROR ❌</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Error</ion-title>
+      <ion-title size="large">❌E R R O R❌</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div id="container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>ERROR 404</ion-card-title>
+        <img src="assets/img/cat-error.gif" alt="Error GIF" width="50" height="50">
+      </ion-card-header>
+      <ion-card-content>
+        <strong>HA SUCEDIDO UN ERROR EN <br> EL SISTEMA <br>
+                Si desea volver 
+                presione abajo :D<br>
+        </strong>
+        <ion-button color="primary" fill="outline" shape="square" [routerLink]="['/home']">
+          Volver
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

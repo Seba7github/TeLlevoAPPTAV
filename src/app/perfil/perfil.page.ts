@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common'; // Importamos Location
+import { AuthService } from '../Servicios/auth.service';
+import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -8,30 +10,37 @@ import { Location } from '@angular/common'; // Importamos Location
   standalone: false,
 })
 export class PerfilPage implements OnInit {
-  showElement: boolean = false;
-  
-  // Inyectamos Location en el constructor
-  constructor(private location: Location) {}
-  
+  constructor(
+    private auth: AuthService,
+    private router:Router,
+    private toast: ToastController
+  ) {}
   user = {
     usuario: '',
     password: '',
   };
-  
   nombreUsuario = '';
-
   ngOnInit() {}
-
   ngAfterContentInit() {
     this.user = history.state.user;
     this.nombreUsuario = this.user.usuario;
-    setTimeout(() => {
-      this.showElement = true; // Después de un tiempo, mostramos el elemento
-    }, 1000);
   }
 
-  // Método para regresar a la página anterior
-  goBack() {
-    this.location.back(); // Esto hace que el navegador regrese a la página anterior
+  logout() {
+    this.auth.logout();
+    this.router.navigate(['/home']);
+    this.generarToast('Usuario Desconectado');
+  }
+
+  generarToast(message: string) {
+    const toast = this.toast.create({
+      message: message,
+      duration: 3000,
+      position: 'bottom',
+    });
+
+    toast.then((res) => {
+      res.present();
+    });
   }
 }

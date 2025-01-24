@@ -1,28 +1,100 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+:root {
+  --ion-text-color: white;
+  --background-color:   #f0f0f0;
+  --primary-color:#f0f0f0;
+}
+ion-content {
+  --background: url('../assets/img/fondo-contraseña.jpg') center center/cover no-repeat;
+}
+
+#app-content {
+  position: relative;
+  z-index: 1;
+  color: white; 
+  text-align: center;
+  padding: 20px;
+}
+
+ion-header {
+  --background: transparent;
+  --ion-toolbar-background: transparent;
+}
+ion-input{
+  
+  background-color: rgb(43, 43, 43);
+  offset: 0.2;
+}
+ ion-item{
+  color: rgb(219, 219, 219);
+  margin-left: 8px;
+}
+
+
 #container {
   text-align: center;
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
+  bottom: 0;
+  height: 100vh;
   transform: translateY(-50%);
+  color: white;
+  background-size: cover;
+  background-position: center;
+  animation: backgroundFade 30s infinite; 
+  
+  background-color: rgba(0, 0, 0, 0.5); 
 }
 
 #container strong {
   font-size: 20px;
   line-height: 26px;
+  
 }
 
 #container p {
   font-size: 16px;
   line-height: 22px;
-
-  color: #8c8c8c;
-
+  color: white;
   margin: 0;
 }
 
 #container a {
   text-decoration: none;
 }
+
+#container ion-card {
+  --background: rgba(0, 0, 0, 0.473);
+  
+  margin-top: 150px;
+
+  ion-list {
+    background: transparent;
+  }
+
+  ion-item {
+    --background: transparent;
+    --border-style: none;
+  }
+}
+
+/* Animación para el cambio de fondo */
+@keyframes backgroundFade {
+  0% {
+    background-image: url('/assets/img/Alameda.jpg');
+  }
+  25% {
+    background-image: url('/assets/img/Antonio.png');  
+  }
+  50% {
+    background-image: url('/assets/img/Conce.webp');  
+  }
+  75% {
+    background-image: url('/assets/img/PAO.jpg'); 
+  }
+  100% {
+    background-image: url('/assets/img/Alameda.jpg'); 
+  }
+}
+

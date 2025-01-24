@@ -1,6 +1,9 @@
-# TellevoAPP
-Configurado en dimension:Samsung galaxy s20 Ultra
-412x915
-Credenciales secavieres@duocuc.cl
-    password 1234
- 
+Extensiones de uso recomendado para Moviles <br>
+
+One dark : Tema VSCode <br>
+Material Icon : Iconos <br>
+Ionic Essentials: Package util para Ionic y angular <br>
+Ionic : Extension Oficial Ionic VSCode <br>
+
+Cada vez que clonen o descargen el proyecto <br>
+Deben Aplicar el comando npm install <br>

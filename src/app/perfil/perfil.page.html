@@ -1,20 +1,25 @@
 <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" color="primary" (click)="logout()">
+        <ion-icon slot="end" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Mi Perfil</ion-title>
+  </ion-toolbar>
 </ion-header>
 
-<div id="background-container">
-  <div id="container" >
-    <ion-card>   
-      <ion-card-content>
-        
-          
-            <ion-title>Bienvenido a TeLlevoAPP</ion-title>
-            <ion-label>{{nombreUsuario}}</ion-label>
-        
-          
-        
-        <ion-button (click)="goBack()" expand="full">Atrás/Cerrar</ion-button>  
-        
-      </ion-card-content>
-    </ion-card>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Mi perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-label class="saludo">Bienvenido de vuelta!</ion-label>
+    <ion-label class="nombre-usuario">{{nombreUsuario}}</ion-label>
+    <img src="assets/img/oia-uia.gif" alt="Error GIF" width="50" height="50">
   </div>
-</div>
+  
+</ion-content>

@@ -1,69 +1,26 @@
-  #background-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-size: cover; 
-    background-position: center; 
-    transition: background-position 0.3s ease-in-out;
-  }
-  
-  
-  #background-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/assets/img/PAO.jpg') no-repeat center center; 
-    background-size: cover;
-    animation: changeBackground 30s infinite ease-in-out; 
-  }
+#container {
+  display: flex;
+  flex-direction: column;      // Asegura que los elementos estén uno debajo del otro
+  align-items: center;         // Centra los elementos horizontalmente
+  justify-content: center;     // Centra los elementos verticalmente
+  height: 100vh;               // Hace que el contenedor ocupe toda la altura de la ventana
+  text-align: center;          // Centra el texto dentro de los labels
+}
 
-  #container{
-    max-height: 400px;
-  }
- 
+.saludo {
+  margin-bottom: 20px;  // Menos margen para no desplazar demasiado
+  font-size: x-large;   // Tamaño grande para el saludo
+  border: 1px;
+  border-color: cyan;
+}
 
-  ion-card {
-    width: 350px; 
-    max-width: 500px; 
-    height: 300px;
-    margin-left: 10px;
-    align-items: center;
-    margin-top: 15%;
-    margin-bottom:10%;
-  }
+.nombre-usuario {
+  margin-bottom: 20px;
+  font-size: larger;  // Ajuste el margen entre el nombre de usuario y el gif
+}
 
-
-  
-  ion-label{
-    margin-bottom: 50%;
-  }
-
-  ion-button{
-    margin-top: 150px;
-    
-  } 
-
-@keyframes changeBackground {
-  0%, 100% {
-    background-image: url('/assets/img/Alameda.jpg');
-    opacity: 1;
-  }
-  33% {
-    background-image: url('/assets/img/Antonio.png');
-    opacity: 1;
-  }
-  66% {
-    background-image: url('/assets/img/Conce.webp');
-    opacity: 1;
-  }
+img {
+  margin-top: 20px; 
+  height:300px;
+  width: 300px; 
 }
