@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable, retry } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -28,5 +29,9 @@ export class APIService {
 
   listarUsuarios(): Observable<any> {
     return this.http.get(this.baseURL + '/users').pipe(retry(3));
+  }
+
+  updateUserPassword(user: any): Observable<any> {
+    return this.http.put(`${this.baseURL}/usuarios/${user.id}`, user);  // Este endpoint debe actualizar la contraseña
   }
 }

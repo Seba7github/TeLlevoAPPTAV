@@ -1,30 +1,56 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; 
-import { Router } from '@angular/router'; 
+import { AuthService } from '../Servicios/auth.service';
+import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reset-password',
   templateUrl: './reset-password.page.html',
   styleUrls: ['./reset-password.page.scss'],
-  standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  standalone: false,
 })
 export class ResetPasswordPage {
-  email: string = ''; 
-  constructor(private router: Router) {}
+  email: string = '';
+  password: string = '';
+  confirmPassword: string = '';
 
-  
-  volverHome() {
-    this.router.navigate(['/home']);
-  }
+  constructor(
+    private authService: AuthService,
+    private toastController: ToastController,
+    private router: Router
+  ) {}
 
-  recoverPassword() {
-    if (this.email) {
-      console.log('Recuperando contraseña para: ', this.email);
-    } else {
-      console.log('Por favor, ingresa un correo válido.');
+  async resetPassword() {
+    if (!this.email || !this.password || !this.confirmPassword) {
+      this.showToast('Por favor completa todos los campos.');
+      return;
     }
+  
+    if (this.password !== this.confirmPassword) {
+      this.showToast('Las contraseñas no coinciden.');
+      return;
+    }
+  
+    try {
+      const success = await this.authService.resetPassword(this.email, this.password);
+      if (success) {
+        this.showToast('Contraseña actualizada exitosamente.');
+        this.router.navigate(['/home']);  // Redirigir a la página de login
+      } else {
+        this.showToast('Hubo un problema al actualizar la contraseña.');
+      }
+    } catch (error) {
+      this.showToast('Error al restablecer la contraseña.');
+    }
+  }
+  
+
+  async showToast(message: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000,
+      position: 'top',
+    });
+    toast.present();
   }
 }
