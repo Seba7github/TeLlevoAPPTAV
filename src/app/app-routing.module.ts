@@ -39,7 +39,11 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'error',
+  },  {
+    path: 'piloto',
+    loadChildren: () => import('./piloto/piloto.module').then( m => m.PilotoPageModule)
   },
+
 ];
 
 @NgModule({

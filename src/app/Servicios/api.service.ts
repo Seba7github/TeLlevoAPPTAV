@@ -7,7 +7,7 @@ import { Observable, retry } from 'rxjs';
   providedIn: 'root',
 })
 export class APIService {
-  private baseURL = 'http://localhost:3000';
+  private baseURL = 'https://hz9h10lj-3000.brs.devtunnels.ms/';
   private http: HttpClient = inject(HttpClient);
   constructor() {}
 
@@ -32,6 +32,6 @@ export class APIService {
   }
 
   updateUserPassword(user: any): Observable<any> {
-    return this.http.put(`${this.baseURL}/usuarios/${user.id}`, user);  // Este endpoint debe actualizar la contraseña
+    return this.http.put(`${this.baseURL}/usuarios/${user.id}`, user);  
   }
 }
