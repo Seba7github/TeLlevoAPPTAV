@@ -1,7 +1,6 @@
 :root {
   --ion-text-color: white;
-  --background-color:   #f0f0f0;
-  --primary-color:#f0f0f0;
+ 
 }
 ion-content {
   --background: url('../assets/img/fondo-contraseña.jpg') center center/cover no-repeat;
@@ -64,7 +63,7 @@ ion-input{
   text-decoration: none;
 }
 
-#container ion-card {
+/*#container ion-card {
   --background: rgba(0, 0, 0, 0.473);
   
   margin-top: 150px;
@@ -79,7 +78,8 @@ ion-input{
   }
 }
 
-/* Animación para el cambio de fondo */
+
+/* Animación para el cambio de fondo 
 @keyframes backgroundFade {
   0% {
     background-image: url('/assets/img/Alameda.jpg');
@@ -97,4 +97,5 @@ ion-input{
     background-image: url('/assets/img/Alameda.jpg'); 
   }
 }
+  */
 

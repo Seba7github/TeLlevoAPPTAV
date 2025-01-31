@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: 'perfil',
     loadChildren: () =>
-      import('./perfil/perfil.module').then((m) => m.PerfilPageModule),
+      import('./perfil-conductor/perfil.module').then((m) => m.PerfilConductorPageModule),
     canActivate: [authGuard],
   },
   {
@@ -39,10 +39,8 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'error',
-  },  {
-    path: 'piloto',
-    loadChildren: () => import('./piloto/piloto.module').then( m => m.PilotoPageModule)
   },
+  
 
 ];
 

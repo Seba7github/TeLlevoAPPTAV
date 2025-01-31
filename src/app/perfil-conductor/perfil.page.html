@@ -1,0 +1,42 @@
+<html lang="es">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-button fill="clear" color="primary" (click)="logout()">
+          <ion-icon slot="end" name="log-out-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Mi Perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Mi perfil</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    
+    <div id="container">
+      
+      <ion-label class="saludo">Bienvenido de vuelta!</ion-label>
+      <ion-label class="nombre-usuario">{{nombreUsuario}}</ion-label>
+      <ion-item>
+        <ion-input label="¿Donde inicia tu viaje?"></ion-input>
+      </ion-item>
+      <div> <div id="map" style="height: 100px;"></div></div>
+
+    </div>
+    
+    
+    
+  </ion-content>
+ 
+</html>
+
+
+
+
+
+

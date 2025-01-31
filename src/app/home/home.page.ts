@@ -2,7 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { AnimationController } from '@ionic/angular';
 import { AuthService } from '../Servicios/auth.service';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing'; 
 
 @Component({
   selector: 'app-home',

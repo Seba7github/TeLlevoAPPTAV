@@ -7,6 +7,11 @@
   text-align: center;          // Centra el texto dentro de los labels
 }
 
+#map{
+  justify-content: center;
+  z-index: 10;
+}
+
 .saludo {
   margin-bottom: 20px;  // Menos margen para no desplazar demasiado
   font-size: x-large;   // Tamaño grande para el saludo
@@ -23,4 +28,8 @@ img {
   margin-top: 20px; 
   height:300px;
   width: 300px; 
+}
+
+ion-label{
+  color:black;
 }

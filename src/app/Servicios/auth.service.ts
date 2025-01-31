@@ -4,6 +4,7 @@ import { APIService } from './api.service';
 import { firstValueFrom } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -83,6 +84,11 @@ export class AuthService {
     return true;
   }
 
+  getUser() {
+    const user = this.storage.getItem('conectado');
+    return user ? JSON.parse(user) : null; 
+  }
+
   // Método para verificar si el usuario está conectado
   isConnected(): boolean {
     return this.storage.getItem('conectado') !== null;
@@ -97,21 +103,18 @@ export class AuthService {
 
   // Método para restablecer la contraseña
   async resetPassword(correo: string, nuevaPassword: string): Promise<boolean> {
-    const users = await firstValueFrom(this.api.listarUsuarios());  // Suponiendo que tienes una API para obtener los usuarios
+    const users = await firstValueFrom(this.api.listarUsuarios()); 
     const userIndex = users.findIndex((user: any) => user.correo === correo);
     
     if (userIndex === -1) {
       console.log('Correo no encontrado');
-      return false; // Si no se encuentra el usuario con ese correo
+      return false; 
     }
 
     // Actualiza la contraseña del usuario
     users[userIndex].pass = nuevaPassword;
-
-    // Aquí puedes enviar los datos actualizados al servidor si lo deseas
     await this.api.updateUserPassword(users[userIndex]).subscribe();
 
-    // Si trabajas con almacenamiento local
     this.storage.setItem('users', users);
 
     console.log('Contraseña actualizada correctamente');

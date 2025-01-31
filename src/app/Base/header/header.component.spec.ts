@@ -10,8 +10,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ],
-      imports: [IonicModule.forRoot(), HeaderComponent, CommonModule, RouterTestingModule]
+      imports: [IonicModule.forRoot(), HeaderComponent, CommonModule, RouterTestingModule]  // Mantén HeaderComponent aquí
     }).compileComponents();
 
     fixture = TestBed.createComponent(HeaderComponent);

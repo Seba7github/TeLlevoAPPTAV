@@ -1,20 +1,19 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
-
-import { AuthService } from './auth.service';
-
-describe('AuthService', () => {
-  let service: AuthService;
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { APIService } from './api.service'; 
+describe('APIService', () => {
+  let service: APIService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule], // Aquí importas HttpClientModule
-      providers: [AuthService],
+      imports: [HttpClientTestingModule], 
+      providers: [APIService],            
     });
-    service = TestBed.inject(AuthService);
+    service = TestBed.inject(APIService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
 });
+

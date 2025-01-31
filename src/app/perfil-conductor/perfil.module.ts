@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PilotoPageRoutingModule } from './piloto-routing.module';
+import { PerfilConductorPageRoutingModule } from './perfil-routing.module';
 
-import { PilotoPage } from './piloto.page';
+import { PerfilConductorPage } from './perfil.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PilotoPageRoutingModule
+    PerfilConductorPageRoutingModule
   ],
-  declarations: [PilotoPage]
+  declarations: [PerfilConductorPage]
 })
-export class PilotoPageModule {}
+export class PerfilConductorPageModule {}
