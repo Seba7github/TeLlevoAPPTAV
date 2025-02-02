@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';  // Importa este módulo
-import { APIService } from './api.service';  // Asegúrate de tener la importación correcta
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { APIService } from './api.service';  
 
 describe('APIService', () => {
   let service: APIService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],  // Asegúrate de que esté aquí
+      imports: [HttpClientTestingModule],  
     });
     service = TestBed.inject(APIService);
   });

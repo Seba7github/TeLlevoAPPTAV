@@ -9,8 +9,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 
-// IMPORTANTE: Importa el módulo de la página, no la página directamente
-import { ResetPasswordPageModule } from './reset-password/reset-password.module';  // Asegúrate de que esto sea correcto
+import { ResetPasswordPageModule } from './reset-password/reset-password.module';  
 
 import { FormsModule } from '@angular/forms';
 
@@ -22,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     MatProgressSpinnerModule,
     HttpClientModule,
-    ResetPasswordPageModule,  // Aquí importa el módulo de ResetPasswordPage
+    ResetPasswordPageModule,  
     FormsModule,
   ],
   providers: [

@@ -15,7 +15,6 @@ export class AuthService {
 
   constructor() {}
 
-  // Método de login existente
   login(user: string, pass: string): Promise<boolean> {
     return new Promise((resolve) => {
       this.api.login(user).subscribe((res: any) => {
@@ -37,7 +36,6 @@ export class AuthService {
     });
   }
 
-  // Método de registro existente
   registrar(user: string, correo: string, pass: string) {
     const listaUsuarios = this.storage.getItem('users') || [];
     if (
@@ -59,7 +57,6 @@ export class AuthService {
     return true;
   }
 
-  // Método de registro con la API
   async registerAPI(
     user: string,
     correo: string,
@@ -89,19 +86,15 @@ export class AuthService {
     return user ? JSON.parse(user) : null; 
   }
 
-  // Método para verificar si el usuario está conectado
   isConnected(): boolean {
     return this.storage.getItem('conectado') !== null;
   }
 
-  // Método para hacer logout
   logout() {
     this.storage.removeItem('conectado');
   }
 
-  // *** NUEVO MÉTODO PARA RESETEAR LA CONTRASEÑA ***
-
-  // Método para restablecer la contraseña
+  
   async resetPassword(correo: string, nuevaPassword: string): Promise<boolean> {
     const users = await firstValueFrom(this.api.listarUsuarios()); 
     const userIndex = users.findIndex((user: any) => user.correo === correo);
@@ -111,7 +104,6 @@ export class AuthService {
       return false; 
     }
 
-    // Actualiza la contraseña del usuario
     users[userIndex].pass = nuevaPassword;
     await this.api.updateUserPassword(users[userIndex]).subscribe();
 

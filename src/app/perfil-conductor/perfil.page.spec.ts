@@ -2,41 +2,38 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PerfilConductorPage } from './perfil.page';
 import { IonicModule } from '@ionic/angular';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { AuthService } from 'src/app/Servicios/auth.service'; // Ajusta el path si es necesario
+import { AuthService } from 'src/app/Servicios/auth.service';
 import { of } from 'rxjs';
-import { APIService } from 'src/app/Servicios/api.service';  // Asegúrate de importar el servicio APIService
+import { APIService } from 'src/app/Servicios/api.service';  
 
 describe('PerfilConductorPage', () => {
   let component: PerfilConductorPage;
   let fixture: ComponentFixture<PerfilConductorPage>;
   let authServiceMock: jasmine.SpyObj<AuthService>;
-  let apiServiceMock: jasmine.SpyObj<APIService>; // Mock para APIService
+  let apiServiceMock: jasmine.SpyObj<APIService>; 
 
   beforeEach(async () => {
-    // Crear el mock del servicio AuthService
     authServiceMock = jasmine.createSpyObj('AuthService', ['getUser']);
-    // Crear el mock del servicio APIService (si es necesario para las pruebas)
     apiServiceMock = jasmine.createSpyObj('APIService', ['listarUsuarios']);
 
-    // Configurar el comportamiento del mock para devolver un usuario simulado
     authServiceMock.getUser.and.returnValue(of({ username: 'testUser', email: 'testuser@example.com' }));
-    apiServiceMock.listarUsuarios.and.returnValue(of([]));  // Mock para la llamada a listarUsuarios()
+    apiServiceMock.listarUsuarios.and.returnValue(of([]));  
 
     await TestBed.configureTestingModule({
       declarations: [PerfilConductorPage],
       imports: [
         IonicModule.forRoot(),
-        HttpClientTestingModule,  // Asegúrate de que esté aquí
+        HttpClientTestingModule,  
       ],
       providers: [
         { provide: AuthService, useValue: authServiceMock },
-        { provide: APIService, useValue: apiServiceMock }, // Proveer el mock del servicio APIService
+        { provide: APIService, useValue: apiServiceMock },
       ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PerfilConductorPage);
     component = fixture.componentInstance;
-    fixture.detectChanges(); // Necesario para que el componente se inicialice y se accedan los datos
+    fixture.detectChanges(); 
   });
 
   it('should create', () => {

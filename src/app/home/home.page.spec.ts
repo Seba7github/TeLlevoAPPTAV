@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-import { HttpClientTestingModule } from '@angular/common/http/testing'; // Importa HttpClientTestingModule
+import { HttpClientTestingModule } from '@angular/common/http/testing'; 
 import { HomePage } from './home.page';
-import { AuthService } from '../Servicios/auth.service'; // Importa AuthService si es necesario en tu página
+import { AuthService } from '../Servicios/auth.service'; 
 
 describe('HomePage', () => {
   let component: HomePage;
@@ -13,9 +13,9 @@ describe('HomePage', () => {
       declarations: [HomePage],
       imports: [
         IonicModule.forRoot(),
-        HttpClientTestingModule, // Agrega HttpClientTestingModule aquí
+        HttpClientTestingModule,
       ],
-      providers: [AuthService], // Si HomePage depende de AuthService, lo debes proporcionar aquí
+      providers: [AuthService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomePage);

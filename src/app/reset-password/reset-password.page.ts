@@ -35,7 +35,7 @@ export class ResetPasswordPage {
       const success = await this.authService.resetPassword(this.email, this.password);
       if (success) {
         this.showToast('Contraseña actualizada exitosamente.');
-        this.router.navigate(['/home']);  // Redirigir a la página de login
+        this.router.navigate(['/home']);  
       } else {
         this.showToast('Hubo un problema al actualizar la contraseña.');
       }

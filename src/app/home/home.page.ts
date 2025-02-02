@@ -45,7 +45,7 @@ export class HomePage implements AfterViewInit {
             this.router.navigate(['/perfil'], navigationExtras);
             this.msj = '';
             this.carga = false;
-          }, 3000);
+          }, 1500);
         } else {
           this.msj = 'Credenciales erroneas';
         }

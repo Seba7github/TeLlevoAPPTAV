@@ -2,38 +2,37 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable, retry } from 'rxjs';
 
-
-
 @Injectable({
   providedIn: 'root',
 })
 export class APIService {
-  private baseURL = 'http://localhost:3000';
+  private baseURL = 'http://192.168.3.50:3000/users';
   private http: HttpClient = inject(HttpClient);
-  constructor() {}
 
+  constructor() {}
 
   login(username: string): Observable<any> {
     return this.http
-      .get(this.baseURL + '/users?username=' + username)
-      .pipe(retry(3));
+      .get(this.baseURL + 'users?username=' + username) 
+      .pipe(retry(3)); 
   }
 
+  
   register(data: any): Observable<any> {
-    return this.http.post(this.baseURL + '/users', data).pipe(retry(3));
+    return this.http.post(this.baseURL + 'users', data).pipe(retry(3));
   }
 
   eliminarUsuario(username: string): Observable<any> {
     return this.http
-      .delete(this.baseURL + '/users?username=' + username)
+      .delete(this.baseURL + 'users?username=' + username) 
       .pipe(retry(3));
   }
 
   listarUsuarios(): Observable<any> {
-    return this.http.get(this.baseURL + '/users').pipe(retry(3));
+    return this.http.get(this.baseURL + 'users').pipe(retry(3)); 
   }
 
   updateUserPassword(user: any): Observable<any> {
-    return this.http.put(`${this.baseURL}/usuarios/${user.id}`, user);  
+    return this.http.put(`${this.baseURL}users/${user.id}`, user);  
   }
 }

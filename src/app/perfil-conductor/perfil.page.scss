@@ -1,16 +1,14 @@
 #container {
   display: flex;
   flex-direction: column;      // Asegura que los elementos estén uno debajo del otro
-  align-items: center;         // Centra los elementos horizontalmente
-  justify-content: center;     // Centra los elementos verticalmente
-  height: 100vh;               // Hace que el contenedor ocupe toda la altura de la ventana
+  align-items: center;         // Centra los elementos horizontalmente    // Centra los elementos verticalmente
+  height: 600px;
+  width: 300px;               // Hace que el contenedor ocupe toda la altura de la ventana
   text-align: center;          // Centra el texto dentro de los labels
 }
 
-#map{
-  justify-content: center;
-  z-index: 10;
-}
+
+
 
 .saludo {
   margin-bottom: 20px;  // Menos margen para no desplazar demasiado
